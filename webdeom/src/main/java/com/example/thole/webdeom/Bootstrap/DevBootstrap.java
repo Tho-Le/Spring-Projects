@@ -1,7 +1,7 @@
 package com.example.thole.webdeom.Bootstrap;
 
 import com.example.thole.webdeom.model.Author;
-import com.example.thole.webdeom.model.Books;
+import com.example.thole.webdeom.model.Book;
 import com.example.thole.webdeom.model.Publisher;
 import com.example.thole.webdeom.repositories.AuthorRepository;
 import com.example.thole.webdeom.repositories.BookRepository;
@@ -9,8 +9,6 @@ import com.example.thole.webdeom.repositories.PublisherRepository;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
-
-import java.awt.print.Book;
 
 @Component
 public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> {
@@ -35,7 +33,7 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
         Author eric = new Author("Eric", "Evans");
         Publisher penguin = new Publisher("Penguin", "Amarillo");
         publisherRepository.save(penguin);
-        Books lastOfUs = new Books("Last Of Us", "4444", penguin);
+        Book lastOfUs = new Book("Last Of Us", "4444", penguin);
         eric.getBooks().add(lastOfUs);
         lastOfUs.getAuthors().add(eric);
 
@@ -46,7 +44,7 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
         Author grim = new Author("Da", "Wild");
         Publisher vantos = new Publisher("Vantos", "Dallas");
         publisherRepository.save(vantos);
-        Books coolOrCruel = new Books("Cool Or Cruel", "2123", vantos);
+        Book coolOrCruel = new Book("Cool Or Cruel", "2123", vantos);
         grim.getBooks().add(coolOrCruel);
         coolOrCruel.getAuthors().add(grim);
 

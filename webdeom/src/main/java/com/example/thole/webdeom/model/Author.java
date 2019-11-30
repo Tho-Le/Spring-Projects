@@ -15,7 +15,7 @@ public class Author {
     private String lastName;
 
     @ManyToMany(mappedBy = "authors")
-    private Set<Books> books = new HashSet<>();
+    private Set<Book> books = new HashSet<>();
 
 
     public Author() {
@@ -27,7 +27,7 @@ public class Author {
         this.lastName = lastName;
     }
 
-    public Author(String firstName, String lastName, Set<Books> books) {
+    public Author(String firstName, String lastName, Set<Book> books) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.books = books;
@@ -57,11 +57,11 @@ public class Author {
         this.lastName = lastName;
     }
 
-    public Set<Books> getBooks() {
+    public Set<Book> getBooks() {
         return books;
     }
 
-    public void setBooks(Set<Books> books) {
+    public void setBooks(Set<Book> books) {
         this.books = books;
     }
 
